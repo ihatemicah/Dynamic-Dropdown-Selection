@@ -1,0 +1,164 @@
+/*FONT FAMILIES*/
+@font-face{
+  font-family:'Equip-Medium';src:url(https://static.ring.com/assets/2BA2B5_0_0-8d07acd133038275054cf636e7be929d.eot);
+  src:url(https://static.ring.com/assets/2BA2B5_0_0-8d07acd133038275054cf636e7be929d.eot?#iefix)
+  format("embedded-opentype"),url(https://static.ring.com/assets/2BA2B5_0_0-648d7e601e49013f05cdab96a9e554f9.woff)
+  format("woff"),url(https://static.ring.com/assets/2BA2B5_0_0-621b87178c3cb4dd6507cd404791de85.ttf)
+  format("truetype")
+}
+@font-face {
+  font-family:'Equip-Light';src:url(https://static.ring.com/assets/30DF1A_0_0-c4865ef5a8de8a032f362ca8cc865a1b.eot);
+  src:url(https://static.ring.com/assets/30DF1A_0_0-c4865ef5a8de8a032f362ca8cc865a1b.eot?#iefix)
+  format("embedded-opentype"),url(https://static.ring.com/assets/30DF1A_0_0-2fdf5018a9733d30e02786f6ef606b76.woff2)
+  format("woff2"),url(https://static.ring.com/assets/30DF1A_0_0-f4b441adfc3a10ccfc6d075e2b09c6b0.woff)
+  format("woff"),url(https://static.ring.com/assets/30DF1A_0_0-e8cf0461312a46730be1e44c66955e1c.ttf)
+  format("truetype"),url(https://static.ring.com/assets/30DF1A_0_0-34a0b807c4c3d878cf9df04a87ab08cb.svg#wf)
+  format("svg")
+}
+
+html, body {
+  overflow-x: hidden;
+  height:100%;
+  color: #464646;
+  margin: 0 ;
+  padding: 0 ;
+  font-family: 'Equip-Light', sans-serif;
+}
+
+h1 {
+  font-family:'Equip-Medium',sans-serif;
+  font-size: 24px;
+}
+
+h2 {
+  font-family: 'Equip-Regular',sans-serif;
+  font-size: 15px;
+  color: #4c4c4c;
+}
+
+p {
+  font-family: 'Equip-Light',sans-serif;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #009AD8;
+}
+
+/* SELECT STYLING */
+select {
+  background-color: white;
+  border: solid 1px #e3e3e3;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1.5em;
+  padding: 6px;
+/* RESET */
+  width: 70%;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select.arrow {
+  background-image:
+  linear-gradient(45deg, transparent 50%, gray 50%),
+  linear-gradient(135deg, gray 50%, transparent 50%),
+  linear-gradient(to right, #ccc, #ccc);
+  background-position:96% ;
+  background-size:
+    5px 5px,
+    2px 2px,
+    1px 0em;
+  background-repeat: no-repeat;
+}
+
+.main-container {
+  margin-left: 5%;
+  margin-right: 6%;
+}
+
+.context {
+  font-family:'Equip-Light',sans-serif;
+   width:85%;
+   line-height: 1.5;
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+.question > p {
+  opacity: .5;
+}
+
+.question > button:nth-child(2) {
+  float:right;
+}
+
+.formsubmit {
+  background-color: white;
+  position: absolute;
+  border: 2px solid #333;
+  bottom: 20%;
+  right: 20px;
+  left: 20px;
+  padding: 20px;
+}
+
+.formsubmit > p {
+    font-size: 14px;
+}
+
+.confirmation > p {
+  margin-left: 5%;
+  font-family: 'Equip-Medium';
+}
+
+.thankyou > p {
+  margin-left: 5%;
+  font-family:'Equip-Medium';
+}
+
+textarea {
+    color:#222;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    width: 75%;
+    outline: none;
+    font-family: 'Equip-Light';
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input {
+  background: #009AD8;
+  width:160px;
+  border-radius: 4px;
+  border: 2px solid #009AD8;
+  padding: 9px 0 5px;
+  line-height: 16px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-left: 0;
+  color:white;
+  text-decoration: none;
+  margin-right: 6%;
+  margin-top: 5%;
+}
+
+input:focus {
+  background-color: #5691C9;
+  border: 2px solid #5691C9;
+  transition: ease .2s;
+  outline: none;
+}
+
+
+/* ##### HIDDEN DIVS #####*/
