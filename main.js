@@ -7,14 +7,14 @@ $('#products').on('change', function() {
       $(".suc").remove();
       // APPENDS TO DOWNLOAD
       $(".download").append("<option class='suc' value='0' > Download Speed </option>");
-      $(".download").append("<option class='suc' value='1' > 30ghz to 40ghz </option>");
-      $(".download").append("<option class='suc' value='2' > 50ghz to 70ghz </option>");
-      $(".download").append("<option class='suc' value='3' > 80ghz to 100ghz </option>");
+      $(".download").append("<option class='suc' value='1' > > 1mbs </option>");
+      $(".download").append("<option class='suc' value='2' > 1mbs - 5mbs </option>");
+      $(".download").append("<option class='suc' value='3' > 5mbs + </option>");
       //APPENDS TO UPLOAD
       $(".upload").append("<option class='suc' value = '0' > Upload Speed </option>");
-      $(".upload").append("<option class='suc' value = '1' > 1ghz to 5ghz </option>");
-      $(".upload").append("<option class='suc' value = '2' > 5ghz to 10ghz </option>");
-      $(".upload").append("<option class='suc' value = '3' > 10ghz to 50ghz </option>");
+      $(".upload").append("<option class='suc' value = '1' > > 1mbs </option>");
+      $(".upload").append("<option class='suc' value = '2' > 1mbs to 5mbs </option>");
+      $(".upload").append("<option class='suc' value = '3' > 5mbs + </option>");
 
       // REMOVES OPTION VALUE FROM SELECT
       $(".doorbell").remove();
@@ -25,14 +25,14 @@ $('#products').on('change', function() {
   if (this.value == '2') {
       // APPENDS OPTION VALUE TO SELECT
       $(".download").append("<option class='doorbell' value = '0' >Download Speed</option>");
-      $(".download").append("<option class='doorbell' value = '4' >50ghz to 25ghz</option>");
-      $(".download").append("<option class='doorbell' value = '5' >25ghz to 70ghz</option>");
-      $(".download").append("<option class='doorbell' value = '6' >100ghz to 50ghz</option>");
+      $(".download").append("<option class='doorbell' value = '4' > > 1mbs </option>");
+      $(".download").append("<option class='doorbell' value = '5' >1mbs - 5mbs</option>");
+      $(".download").append("<option class='doorbell' value = '6' >5mbs + </option>");
       // APPENDS TO UPLOAD
       $(".upload").append("<option class='doorbell' value = '0'  > Upload Speed </option>");
-      $(".upload").append("<option class='doorbell' value = '4'  > 5ghz to 15ghz </option>");
-      $(".upload").append("<option class='doorbell' value = '5'  > 15ghz to 30ghz </option>");
-      $(".upload").append("<option class='doorbell' value = '6'  > 30ghz to 100ghz </option>");
+      $(".upload").append("<option class='doorbell' value = '4'  > > 1mbs </option>");
+      $(".upload").append("<option class='doorbell' value = '5'  > 1mbs - 5mbs </option>");
+      $(".upload").append("<option class='doorbell' value = '6'  > 5mbs + </option>");
 
       // REMOVES OPTION VALUE FROM SELECT
         $(".suc").remove();
@@ -42,14 +42,14 @@ $('#products').on('change', function() {
   if (this.value == '3') {
       // APPENDS TO DOWNLOAD
         $(".download").append("<option class='chime' value = '0'  >Download Speed</option>");
-        $(".download").append("<option class='chime' value = '7'  >20ghz to 50ghz</option>");
-        $(".download").append("<option class='chime' value = '8'  >25ghz to 70ghz</option>");
-        $(".download").append("<option class='chime' value = '9'  >80ghz to 100ghz</option>");
+        $(".download").append("<option class='chime' value = '7'  >> 1mbs </option>");
+        $(".download").append("<option class='chime' value = '8'  >1mbs - 5mbs</option>");
+        $(".download").append("<option class='chime' value = '9'  >5mbs + </option>");
         // APPENDS TO UPLOAD
         $(".upload").append("<option class='chime' value = '0'  > Upload Speed </option>");
-        $(".upload").append("<option class='chime' value = '7'  > 2ghz to 15ghz </option>");
-        $(".upload").append("<option class='chime' value = '8'  > 15ghz to 30ghz </option>");
-        $(".upload").append("<option class='chime' value = '9'  > 40ghz to 60ghz </option>");
+        $(".upload").append("<option class='chime' value = '7'  > > 1mbs </option>");
+        $(".upload").append("<option class='chime' value = '8'  > 1mbs - 5mbs </option>");
+        $(".upload").append("<option class='chime' value = '9'  > 5mbs + </option>");
         // REMOVES OPTION VALUE FROM SELECT
         $(".suc").remove();
         $(".doorbell").remove();
@@ -79,6 +79,7 @@ function getValues() {
   }).get();
 
   //Joins array of values into string and scans within case.
+  // LOOK AT CONSOLE :)
   console.log(vals);
   switch (vals.join (' '))
   {
@@ -93,12 +94,38 @@ function getValues() {
     case '1 1 1 3 3':
     case '2 4 4 6 6':
     case '3 7 7 9 9':
+    case '1 2 2 2 2':
+    case '1 1 2 2 2':
+    case '1 1 1 2 2':
+    case '1 1 1 3 2':
+    case '2 4 4 5 5':
+    case '2 4 4 6 5':
+    case '3 7 7 8 8':
+    case '3 7 7 9 8':
+    case '3 7 7 8 8':
+    case '3 7 7 9 8':
       $('.selection-2').fadeIn('swing');
-      $('.selection-1 , .selection-3').hide();
+      $('.selection-1 , .selection-3 , .selection-4' ).hide();
+      break;
+    // Bad at router - Calling ISP
+    case '1 0 0 1 1':
+    case '2 0 0 4 4':
+    case '3 0 0 7 0':
+    case '1 1 1 1 1':
+    case '2 4 4 4 4':
+    case '3 7 7 7 7':
+    case '1 1 1 2 1':
+    case '1 1 1 3 1':
+    case '1 2 1 1 1':
+
+
+    $('.selection-3').fadeIn('swing');
+    $('selection.2 , .selection-1 , .selection-4').hide();
       break;
     default:
     // If no match all selections are hidden.
     $('.selection-1 , .selection-2 , .selection-3').hide();
+    $('.selection-4').fadeIn('swing');
 
 
   }
