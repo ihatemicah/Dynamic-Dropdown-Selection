@@ -86,17 +86,16 @@ function getValues() {
     case '1 3 3 0 0':
     case '2 6 6 0 0':
     case '3 9 9 0 0':
-    case '1 3 1':
-    case '2 4 4':
-    case '2 5 4':
-    case '2 6 4':
-    case '3 7 7':
-    case '3 8 7':
-    case '3 9 7':
       $('.selection-1').fadeIn('swing');
       $('.selection-2 , .selection-3').hide();
     break;
-
+    // Bad at Product & Good at Router
+    case '1 1 1 3 3':
+    case '2 4 4 6 6':
+    case '3 7 7 9 9':
+      $('.selection-2').fadeIn('swing');
+      $('.selection-1 , .selection-3').hide();
+      break;
     default:
     // If no match all selections are hidden.
     $('.selection-1 , .selection-2 , .selection-3').hide();
