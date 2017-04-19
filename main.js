@@ -7,12 +7,12 @@ $('#products').on('change', function() {
       $(".suc").remove();
       // APPENDS TO DOWNLOAD
       $(".download").append("<option class='suc' value='0' > Download Speed </option>");
-      $(".download").append("<option class='suc' value='1' > > 1mbs </option>");
+      $(".download").append("<option class='suc' value='1' > < 1mbs </option>");
       $(".download").append("<option class='suc' value='2' > 1mbs - 5mbs </option>");
       $(".download").append("<option class='suc' value='3' > 5mbs + </option>");
       //APPENDS TO UPLOAD
       $(".upload").append("<option class='suc' value = '0' > Upload Speed </option>");
-      $(".upload").append("<option class='suc' value = '1' > > 1mbs </option>");
+      $(".upload").append("<option class='suc' value = '1' > < 1mbs </option>");
       $(".upload").append("<option class='suc' value = '2' > 1mbs to 5mbs </option>");
       $(".upload").append("<option class='suc' value = '3' > 5mbs + </option>");
 
@@ -25,12 +25,12 @@ $('#products').on('change', function() {
   if (this.value == '2') {
       // APPENDS OPTION VALUE TO SELECT
       $(".download").append("<option class='doorbell' value = '0' >Download Speed</option>");
-      $(".download").append("<option class='doorbell' value = '4' > > 1mbs </option>");
+      $(".download").append("<option class='doorbell' value = '4' > < 1mbs </option>");
       $(".download").append("<option class='doorbell' value = '5' >1mbs - 5mbs</option>");
       $(".download").append("<option class='doorbell' value = '6' >5mbs + </option>");
       // APPENDS TO UPLOAD
       $(".upload").append("<option class='doorbell' value = '0'  > Upload Speed </option>");
-      $(".upload").append("<option class='doorbell' value = '4'  > > 1mbs </option>");
+      $(".upload").append("<option class='doorbell' value = '4'  > < 1mbs </option>");
       $(".upload").append("<option class='doorbell' value = '5'  > 1mbs - 5mbs </option>");
       $(".upload").append("<option class='doorbell' value = '6'  > 5mbs + </option>");
 
@@ -42,12 +42,12 @@ $('#products').on('change', function() {
   if (this.value == '3') {
       // APPENDS TO DOWNLOAD
         $(".download").append("<option class='chime' value = '0'  >Download Speed</option>");
-        $(".download").append("<option class='chime' value = '7'  >> 1mbs </option>");
+        $(".download").append("<option class='chime' value = '7'  > < 1mbs </option>");
         $(".download").append("<option class='chime' value = '8'  >1mbs - 5mbs</option>");
         $(".download").append("<option class='chime' value = '9'  >5mbs + </option>");
         // APPENDS TO UPLOAD
         $(".upload").append("<option class='chime' value = '0'  > Upload Speed </option>");
-        $(".upload").append("<option class='chime' value = '7'  > > 1mbs </option>");
+        $(".upload").append("<option class='chime' value = '7'  > < 1mbs </option>");
         $(".upload").append("<option class='chime' value = '8'  > 1mbs - 5mbs </option>");
         $(".upload").append("<option class='chime' value = '9'  > 5mbs + </option>");
         // REMOVES OPTION VALUE FROM SELECT
@@ -104,8 +104,20 @@ function getValues() {
     case '3 7 7 9 8':
     case '3 7 7 8 8':
     case '3 7 7 9 8':
+      // Overides for below 1mbs
+      case '1 1 0 0 0':
+      case '1 1 1 0 0':
+      case '1 0 1 0 0':
+      // ---------------------
+      case '2 4 0 0 0':
+      case '2 4 4 0 0':
+      case '2 0 4 0 0':
+      // --------------------=
+      case '3 7 0 0 0':
+      case '3 7 7 0 0':
+
       $('.selection-2').fadeIn('swing');
-      $('.selection-1 , .selection-3 , .selection-4' ).hide();
+      $('.selection-1 , .selection-3 ' ).hide();
       break;
     // Bad at router - Calling ISP
     case '1 0 0 1 1':
@@ -117,15 +129,25 @@ function getValues() {
     case '1 1 1 2 1':
     case '1 1 1 3 1':
     case '1 2 1 1 1':
-
+      // Overrides for below 1mbs
+      case '1 1 0 1 0':
+      case '1 0 1 1 0':
+      case '1 0 0 1 0':
+      case '1 1 1 1 0':
+      case '1 0 1 0 1':
+      case '1 1 0 0 1':
+      // --------------------------
+      case '2 4 0 4 0':
+      case '2 4 0 0 4':
+      case '2 0 0 0 4':
+      case '2 0 0 4 0':
 
     $('.selection-3').fadeIn('swing');
-    $('selection.2 , .selection-1 , .selection-4').hide();
+    $('.selection-2 , .selection-1').hide();
       break;
     default:
     // If no match all selections are hidden.
     $('.selection-1 , .selection-2 , .selection-3').hide();
-    $('.selection-4').fadeIn('swing');
 
 
   }
