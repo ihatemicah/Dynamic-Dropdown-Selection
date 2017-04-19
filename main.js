@@ -8,13 +8,13 @@ $('#products').on('change', function() {
       // APPENDS TO DOWNLOAD
       $(".download").append("<option class='suc' value='0' > Download Speed </option>");
       $(".download").append("<option class='suc' value='1' > < 1mbs </option>");
-      $(".download").append("<option class='suc' value='2' > 1mbs - 5mbs </option>");
-      $(".download").append("<option class='suc' value='3' > 5mbs + </option>");
+      $(".download").append("<option class='suc' value='2' > 1mbs - 2mbs </option>");
+      $(".download").append("<option class='suc' value='3' > > 2mbs </option>");
       //APPENDS TO UPLOAD
       $(".upload").append("<option class='suc' value = '0' > Upload Speed </option>");
       $(".upload").append("<option class='suc' value = '1' > < 1mbs </option>");
-      $(".upload").append("<option class='suc' value = '2' > 1mbs to 5mbs </option>");
-      $(".upload").append("<option class='suc' value = '3' > 5mbs + </option>");
+      $(".upload").append("<option class='suc' value = '2' > 1mbs - 2mbs </option>");
+      $(".upload").append("<option class='suc' value = '3' > > 2mbs </option>");
 
       // REMOVES OPTION VALUE FROM SELECT
       $(".doorbell").remove();
@@ -24,15 +24,15 @@ $('#products').on('change', function() {
   // Ring Video Doorbell
   if (this.value == '2') {
       // APPENDS OPTION VALUE TO SELECT
-      $(".download").append("<option class='doorbell' value = '0' >Download Speed</option>");
-      $(".download").append("<option class='doorbell' value = '4' > < 1mbs </option>");
-      $(".download").append("<option class='doorbell' value = '5' >1mbs - 5mbs</option>");
-      $(".download").append("<option class='doorbell' value = '6' >5mbs + </option>");
+      $(".download").append("<option class='doorbell' value = '0' > Download Speed</option>");
+      $(".download").append("<option class='doorbell' value = '1' > < 1mbs </option>");
+      $(".download").append("<option class='doorbell' value = '2' > 1mbs - 5mbs</option>");
+      $(".download").append("<option class='doorbell' value = '3' > > 2mbs </option>");
       // APPENDS TO UPLOAD
       $(".upload").append("<option class='doorbell' value = '0'  > Upload Speed </option>");
-      $(".upload").append("<option class='doorbell' value = '4'  > < 1mbs </option>");
-      $(".upload").append("<option class='doorbell' value = '5'  > 1mbs - 5mbs </option>");
-      $(".upload").append("<option class='doorbell' value = '6'  > 5mbs + </option>");
+      $(".upload").append("<option class='doorbell' value = '1'  > < 1mbs </option>");
+      $(".upload").append("<option class='doorbell' value = '2'  > 1mbs - 2mbs </option>");
+      $(".upload").append("<option class='doorbell' value = '3'  > > 2mbs </option>");
 
       // REMOVES OPTION VALUE FROM SELECT
         $(".suc").remove();
@@ -41,15 +41,15 @@ $('#products').on('change', function() {
   // Chime
   if (this.value == '3') {
       // APPENDS TO DOWNLOAD
-        $(".download").append("<option class='chime' value = '0'  >Download Speed</option>");
-        $(".download").append("<option class='chime' value = '7'  > < 1mbs </option>");
-        $(".download").append("<option class='chime' value = '8'  >1mbs - 5mbs</option>");
-        $(".download").append("<option class='chime' value = '9'  >5mbs + </option>");
+        $(".download").append("<option class='chime' value = '0'  > Download Speed</option>");
+        $(".download").append("<option class='chime' value = '1'  > < 1mbs </option>");
+        $(".download").append("<option class='chime' value = '2'  > 1mbs - 2mbs</option>");
+        $(".download").append("<option class='chime' value = '3'  > > 2mbs </option>");
         // APPENDS TO UPLOAD
         $(".upload").append("<option class='chime' value = '0'  > Upload Speed </option>");
-        $(".upload").append("<option class='chime' value = '7'  > < 1mbs </option>");
-        $(".upload").append("<option class='chime' value = '8'  > 1mbs - 5mbs </option>");
-        $(".upload").append("<option class='chime' value = '9'  > 5mbs + </option>");
+        $(".upload").append("<option class='chime' value = '1'  > < 1mbs </option>");
+        $(".upload").append("<option class='chime' value = '2'  > 1mbs - 2mbs </option>");
+        $(".upload").append("<option class='chime' value = '3'  > > 2mbs </option>");
         // REMOVES OPTION VALUE FROM SELECT
         $(".suc").remove();
         $(".doorbell").remove();
@@ -83,71 +83,134 @@ function getValues() {
   console.log(vals);
   switch (vals.join (' '))
   {
-    // Good Wifi At Product
+  // Good Wifi At Product
     case '1 3 3 0 0':
-    case '2 6 6 0 0':
-    case '3 9 9 0 0':
+    case '1 0 3 0 0':
+    case '1 3 0 0 0':
       $('.selection-1').fadeIn('swing');
-      $('.selection-2 , .selection-3').hide();
+      $('.selection-2 , .selection-3 , .selection-4').hide();
     break;
-    // Bad at Product & Good at Router
+
+
+  // Bad at Product & Good at Router ------
     case '1 1 1 3 3':
-    case '2 4 4 6 6':
-    case '3 7 7 9 9':
     case '1 2 2 2 2':
     case '1 1 2 2 2':
     case '1 1 1 2 2':
     case '1 1 1 3 2':
-    case '2 4 4 5 5':
-    case '2 4 4 6 5':
-    case '3 7 7 8 8':
-    case '3 7 7 9 8':
-    case '3 7 7 8 8':
-    case '3 7 7 9 8':
-      // Overides for below 1mbs
-      case '1 1 0 0 0':
-      case '1 1 1 0 0':
-      case '1 0 1 0 0':
-      // ---------------------
-      case '2 4 0 0 0':
-      case '2 4 4 0 0':
-      case '2 0 4 0 0':
-      // --------------------=
-      case '3 7 0 0 0':
-      case '3 7 7 0 0':
+    case '1 1 1 3 0':
+    case '1 0 1 3 3':
+    case '1 0 1 3 0':
+    case '1 0 1 0 3':
+    case '1 1 0 3 0':
+    case '1 1 0 0 3':
+    // TEMP
+    case '1 0 1 0 2':
 
-      $('.selection-2').fadeIn('swing');
-      $('.selection-1 , .selection-3 ' ).hide();
+    // -------------------------- DEVICE BREAK
+    case '2 1 1 3 3':
+    case '2 2 2 2 2':
+    case '2 1 2 2 2':
+    case '2 1 1 2 2':
+    case '2 1 1 3 2':
+    case '2 1 1 3 0':
+    case '2 0 1 3 3':
+    case '2 0 1 3 0':
+    case '2 0 1 0 3':
+    case '2 1 0 3 0':
+    case '2 1 0 0 3':
+    // -------------------------- DEVICE BREAK
+    case '3 1 1 3 3':
+    case '3 2 2 2 2':
+    case '3 1 2 2 2':
+    case '3 1 1 3 2':
+    case '4 1 1 3 0':
+    case '4 0 1 3 3':
+    case '4 0 1 3 0':
+    case '4 0 1 0 3':
+    case '4 1 0 3 0':
+    case '4 1 0 0 3':
+    $('.selection-2').fadeIn('swing');
+    $('.selection-1 , .selection-3 , .selection-4' ).hide();
       break;
-    // Bad at router - Calling ISP
+
+  // Customer might need chime pro ---------------.
+
+    case '1 1 0 0 0':
+    case '1 0 1 0 0':
+    case '1 1 1 0 0':
+    case '1 0 1 2 2':
+    case '1 1 0 2 2':
+    case '1 1 0 0 2':
+    case '1 1 0 2 0':
+    case '1 1 1 0 2':
+    case '1 2 1 0 2':
+    case '1 1 2 0 2':
+    case '1 0 0 0 2':
+    case '1 0 0 2 0':
+
+    // -------------------------- DEVICE BREAK
+    case '2 1 0 0 0':
+    case '2 0 1 0 0':
+    case '2 1 1 0 0':
+    // -------------------------- DEVICE BREAK
+    case '3 1 0 0 0':
+    case '3 0 1 0 0':
+    case '3 1 1 0 0':
+    case '3 1 1 2 2':
+    $('.selection-4').fadeIn('swing');
+    $('.selection-1 , .selection-2 , .selection-3').hide();
+    break;
+
+  // Bad at router - Calling ISP ----------------
     case '1 0 0 1 1':
-    case '2 0 0 4 4':
-    case '3 0 0 7 0':
     case '1 1 1 1 1':
-    case '2 4 4 4 4':
-    case '3 7 7 7 7':
     case '1 1 1 2 1':
     case '1 1 1 3 1':
     case '1 2 1 1 1':
-      // Overrides for below 1mbs
-      case '1 1 0 1 0':
-      case '1 0 1 1 0':
-      case '1 0 0 1 0':
-      case '1 1 1 1 0':
-      case '1 0 1 0 1':
-      case '1 1 0 0 1':
-      // --------------------------
-      case '2 4 0 4 0':
-      case '2 4 0 0 4':
-      case '2 0 0 0 4':
-      case '2 0 0 4 0':
+    case '1 1 0 1 0':
+    case '1 0 1 1 0':
+    case '1 0 0 1 0':
+    case '1 1 1 1 0':
+    case '1 0 1 0 1':
+    case '1 1 0 0 1':
+    case '1 0 0 0 1':
+    // -------------------------- DEVICE BREAK
+    case '2 0 0 1 1':
+    case '2 1 1 1 1':
+    case '2 1 1 2 1':
+    case '2 1 1 3 1':
+    case '2 2 1 1 1':
+    case '2 1 0 1 0':
+    case '2 0 1 1 0':
+    case '2 0 0 1 0':
+    case '2 1 1 1 0':
+    case '2 0 1 0 1':
+    case '2 1 0 0 1':
+    case '2 0 0 0 1':
+    // -------------------------- DEVICE BREAK
+    case '3 0 0 1 1':
+    case '3 1 1 1 1':
+    case '3 1 1 2 1':
+    case '3 1 1 3 1':
+    case '3 2 1 1 1':
+    case '3 1 0 1 0':
+    case '3 0 1 1 0':
+    case '3 0 0 1 0':
+    case '3 1 1 1 0':
+    case '3 0 1 0 1':
+    case '3 1 0 0 1':
+    case '3 0 0 0 1':
+
 
     $('.selection-3').fadeIn('swing');
-    $('.selection-2 , .selection-1').hide();
+    $('.selection-2 , .selection-1 , .selection-4').hide();
       break;
+
+
     default:
     // If no match all selections are hidden.
-    $('.selection-1 , .selection-2 , .selection-3').hide();
+    $('.selection-1 , .selection-2 , .selection-3 , .selection-4 ').hide();
 
 
   }
