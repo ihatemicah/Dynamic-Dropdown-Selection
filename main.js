@@ -148,7 +148,9 @@ function getValues() {
     case '1 1 2 0 2':
     case '1 0 0 0 2':
     case '1 0 0 2 0':
-
+    // `````` new stuff `````
+    case '1 0 0 3 0':
+    case '1 0 0 0 3':
     // -------------------------- DEVICE BREAK
     case '2 1 0 0 0':
     case '2 0 1 0 0':
