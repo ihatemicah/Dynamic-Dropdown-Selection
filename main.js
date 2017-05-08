@@ -87,6 +87,12 @@ function getValues() {
     case '1 3 3 0 0':
     case '1 0 3 0 0':
     case '1 3 0 0 0':
+    // ``` New Stuff ```
+    case '1 2 2 0 0':
+    case '1 0 2 0 0':
+    case '1 2 0 3 3':
+    case '1 2 0 0 3':
+    case '1 2 0 3 0':
       $('.selection-1').fadeIn('swing');
       $('.selection-2 , .selection-3 , .selection-4').hide();
     break;
@@ -155,11 +161,17 @@ function getValues() {
     case '2 1 0 0 0':
     case '2 0 1 0 0':
     case '2 1 1 0 0':
+    case '2 0 0 3 0':
+    case '2 0 0 0 3':
+
     // -------------------------- DEVICE BREAK
     case '3 1 0 0 0':
     case '3 0 1 0 0':
     case '3 1 1 0 0':
     case '3 1 1 2 2':
+    case '3 0 0 3 0':
+    case '3 0 0 0 3':
+
     $('.selection-4').fadeIn('swing');
     $('.selection-1 , .selection-2 , .selection-3').hide();
     break;
@@ -177,7 +189,6 @@ function getValues() {
     case '1 0 1 0 1':
     case '1 1 0 0 1':
     case '1 0 0 0 1':
-    // `````` new stuff `````
     case '1 0 0 2 1':
     case '1 0 0 1 2':
     case '1 1 1 0 1':
@@ -200,6 +211,12 @@ function getValues() {
     case '1 0 2 0 1':
     case '1 2 0 1 0':
     case '1 0 2 1 0':
+    case '1 3 0 1 0':
+    case '1 0 3 1 0':
+    case '1 2 3 1 0':
+    case '1 3 2 1 0':
+    case '1 3 3 1 3':
+
     // -------------------------- DEVICE BREAK
     case '2 0 0 1 1':
     case '2 1 1 1 1':
@@ -213,6 +230,34 @@ function getValues() {
     case '2 0 1 0 1':
     case '2 1 0 0 1':
     case '2 0 0 0 1':
+    case '2 0 0 2 1':
+    case '2 0 0 1 2':
+    case '2 1 1 0 1':
+    case '2 1 0 1 1':
+    case '2 1 2 1 0':
+    case '2 2 2 1 0':
+    case '2 2 2 1 1':
+    case '2 3 2 1 1':
+    case '2 3 3 1 1':
+    case '2 3 3 2 1':
+    case '2 3 3 1 2':
+    case '2 3 3 0 1':
+    case '2 3 3 1 0':
+    case '2 3 0 1 1':
+    case '2 0 3 1 1':
+    case '2 2 3 1 1':
+    case '2 1 3 1 1':
+    case '2 1 2 1 1':
+    case '2 2 0 0 1':
+    case '2 0 2 0 1':
+    case '2 2 0 1 0':
+    case '2 0 2 1 0':
+    case '2 3 0 1 0':
+    case '2 0 3 1 0':
+    case '2 2 3 1 0':
+    case '2 3 2 1 0':
+    case '2 3 3 1 3':
+
     // -------------------------- DEVICE BREAK
     case '3 0 0 1 1':
     case '3 1 1 1 1':
@@ -226,6 +271,33 @@ function getValues() {
     case '3 0 1 0 1':
     case '3 1 0 0 1':
     case '3 0 0 0 1':
+    case '3 0 0 2 1':
+    case '3 0 0 1 2':
+    case '3 1 1 0 1':
+    case '3 1 0 1 1':
+    case '3 1 2 1 0':
+    case '3 2 2 1 0':
+    case '3 2 2 1 1':
+    case '3 3 2 1 1':
+    case '3 3 3 1 1':
+    case '3 3 3 2 1':
+    case '3 3 3 1 2':
+    case '3 3 3 0 1':
+    case '3 3 3 1 0':
+    case '3 3 0 1 1':
+    case '3 0 3 1 1':
+    case '3 2 3 1 1':
+    case '3 1 3 1 1':
+    case '3 1 2 1 1':
+    case '3 2 0 0 1':
+    case '3 0 2 0 1':
+    case '3 2 0 1 0':
+    case '3 0 2 1 0':
+    case '3 3 0 1 0':
+    case '3 0 3 1 0':
+    case '3 2 3 1 0':
+    case '3 3 2 1 0':
+    case '3 3 3 1 3':
 
 
     $('.selection-3').fadeIn('swing');
